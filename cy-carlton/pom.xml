@@ -21,6 +21,8 @@
 
 	<modules>
 		<module>cy-carlton-eureka</module>
+		<module>cy-carlton-productor</module>
+		<module>cy-carlton-customer</module>
 	</modules>
 
 	<repositories>
