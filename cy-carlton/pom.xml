@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.carlton</groupId>
+	<artifactId>cy-carlton</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.12.RELEASE</version>
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+	
+
+	<modules>
+		<module>cy-carlton-eureka</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>public</id>
+			<name>aliyun nexus</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>releases</id>
+			<layout>default</layout>
+			<url>http://114.215.249.96:9999/nexus/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>snapshots</id>
+			<name>snapshots</name>
+			<url>http://114.215.249.96:9999/nexus/content/repositories/snapshots/</url>
+		</repository>
+		<repository>
+			<id>tianque</id>
+			<name>tianque</name>
+			<url>http://114.215.249.96:9999/nexus/content/repositories/tianque/</url>
+		</repository>
+		<repository>
+			<id>thirdparty</id>
+			<name>thirdparty</name>
+			<url>http://114.215.249.96:9999/nexus/content/repositories/thirdparty/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>public</id>
+			<name>aliyun nexus</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.tianque</groupId>
+				<artifactId>tq-spring-boot-starter-dubbox</artifactId>
+				<version>1.5.33</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>1.5.3.RELEASE</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<defaultGoal>install</defaultGoal>
+
+		<!-- <resources> -->
+		<!-- <resource> -->
+		<!-- <directory>src/main/resources</directory> -->
+		<!-- <filtering>true</filtering> -->
+		<!-- </resource> -->
+		<!-- </resources> -->
+
+		<!-- <testResources> -->
+		<!-- <testResource> -->
+		<!-- <directory>src/test/resources</directory> -->
+		<!-- <filtering>true</filtering> -->
+		<!-- </testResource> -->
+		<!-- </testResources> -->
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
